@@ -107,9 +107,13 @@ class Arbre:
           if self.right is None and self.left is None :
             return None 
           elif self.right is None :
-            print()
+            predecesseur = self.left.predecesseur()
+            self.left = self.left.remove(predecesseur.value)
+            self.value = predecesseur.value
           else : 
-            print()
+            successeur = self.right.successeur()
+            self.right = self.right.remove(successeur.value)
+            self.value = successeur.value
 
 """
 """
